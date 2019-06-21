@@ -27,7 +27,7 @@ describe BingTranslator do
       expect(result).to eq 'Ce message doit être traduit'
 
       result = translator.translate message_en, from: :en, to: :de
-      expect(result).to eq 'Diese Botschaft sollte übersetzt werden'
+      expect(result).to eq 'Diese Nachricht sollte übersetzt werden'
     end
 
     it 'translates long texts (up to allowed limit)' do
@@ -67,17 +67,17 @@ describe BingTranslator do
   describe '#translate_array' do
     it 'translates array of texts' do
       result = translator.translate_array [message_en, message_en_other], from: :en, to: :fr
-      expect(result).to eq ['Ce message doit être traduit', 'Ce message devrait être trop traduit']
+      expect(result).to eq ['Ce message doit être traduit', 'Ce message doit être trop traduit']
     end
   end
 
   describe '#translate_array2' do
     it 'translates array of texts, with word alignment information' do
       result = translator.translate_array2 [message_en, message_en_other], from: :en, to: :de
-      expect(result).to eq [['Diese Botschaft sollte übersetzt werden',
+      expect(result).to eq [['Diese Nachricht sollte übersetzt werden',
                              '0:3-0:4 5:11-6:14 13:18-16:21 20:21-33:38 23:32-23:31'],
-                            ['Diese Botschaft sollte zu übersetzt werden',
-                             '0:3-0:4 5:11-6:14 13:18-16:21 23:25-23:24 27:36-26:34']]
+                            ['Diese Nachricht sollte zu übersetzt werden',
+                             '0:3-0:4 5:11-6:14 13:18-16:21 20:21-36:41 23:25-23:24 27:36-26:34']]
     end
   end
 
