@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'bing_translator'
-  s.version     = '6.0.0'
-  s.date        = '2019-03-25'
+  s.version     = '6.0.1'
+  s.date        = '2019-06-21'
   s.homepage    = 'https://www.github.com/relrod/bing_translator-gem'
   s.summary     = 'Translate using the Bing HTTP API'
   s.description = 'Translate strings using the Bing HTTP API. Requires that you have a Client ID and Secret. See README.md for information.'
